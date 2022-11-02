@@ -1,0 +1,19 @@
+{
+  "name": "assignment1",
+  "version": "1.0.0",
+  "description": "Assignment 1 for Nodejs",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kritib2502/assignment1.git"
+  },
+  "author": "Ceilidh Ashcroft",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kritib2502/assignment1/issues"
+  },
+  "homepage": "https://github.com/kritib2502/assignment1#readme"
+}
