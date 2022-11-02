@@ -62,7 +62,7 @@ const server = http.createServer((req, res) => {
         // * set statusCode to 404
         // * use res.setHeader to specify "Content-Type", "text/html"
         // * send "File not found"
-        res.statusCode(404);
+        res.statusCode=404;
         res.setHeader("Content-Type", "text/plain");
         res.end("File not found :(")
       }
