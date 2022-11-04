@@ -11,7 +11,9 @@
 // * Load the core HTTP module so that we can create a server
 const http = require("http")
 // * Load the file helper functions with object destructuring from utils
-const utils = require("./utils/fileHelper")
+const utils = require("./utils/fileHelper.js")
+const loadProfile = utils.loadProfile;
+const loadStatic = utils.loadStatic;
 // hostname and port are needed in order for the http server to listen for requests
 // * declare variables for these using 127.0.0.1 for hostname
 const hostname = "127.0.0.1";
@@ -37,15 +39,15 @@ const server = http.createServer((req, res) => {
       res.end("Profiles List");
       break;
     //   Individual Profile
-    case "/profiles/kriti":
+    case ("/profiles/kriti"):
       console.log("kriti is here.  Loading profile...");
       loadProfile(req, res);
       break;
-    case "/profiles/sara":
-      console.log("kriti is here.  Loading profile...");
+    case ("/profiles/sara"):
+      console.log("sara is here.  Loading profile...");
       loadProfile(req, res);
       break;
-    case "/profiles/ceilidh":
+    case ("/profiles/ceilidh"):
       console.log("kriti is here.  Loading profile...");
       loadProfile(req, res);
       break;
