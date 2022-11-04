@@ -11,7 +11,9 @@
 // * Load the core HTTP module so that we can create a server
 const http = require("http")
 // * Load the file helper functions with object destructuring from utils
-const utils = require("./utils/fileHelper")
+const utils = require("./utils/fileHelper.js")
+const loadProfile = utils.loadProfile;
+const loadStatic = utils.loadStatic;
 // hostname and port are needed in order for the http server to listen for requests
 // * declare variables for these using 127.0.0.1 for hostname
 const hostname = "127.0.0.1";
@@ -27,17 +29,28 @@ const server = http.createServer((req, res) => {
     case ("/"):
       res.statusCode = 200;
       res.setHeader("Content-Type", "text/plain");
-      res.end("Hello Node Server");
+      res.end("Git to node you");
       break;
     // Profiles Listing Page
     // * Add a case that responds to /profiles which sends "Profiles List" with a 200
-
+    case ("/profiles"):
+      res.statusCode = 200;
+      res.setHeader("Content-Type", "text/plain");
+      res.end("Profiles List");
+      break;
     //   Individual Profile
-    case "/profiles/josh":
-      console.log("Josh is here.  Loading profile...");
+    case ("/profiles/kriti"):
+      console.log("kriti is here.  Loading profile...");
       loadProfile(req, res);
       break;
-
+    case ("/profiles/sara"):
+      console.log("sara is here.  Loading profile...");
+      loadProfile(req, res);
+      break;
+    case ("/profiles/ceilidh"):
+      console.log("kriti is here.  Loading profile...");
+      loadProfile(req, res);
+      break;
     /* Add in a cases pointing at your personal profiles below */
 
     //   Unhandled URL
@@ -51,6 +64,9 @@ const server = http.createServer((req, res) => {
         // * set statusCode to 404
         // * use res.setHeader to specify "Content-Type", "text/html"
         // * send "File not found"
+        res.statusCode=404;
+        res.setHeader("Content-Type", "text/plain");
+        res.end("File not found :(")
       }
   }
 });
